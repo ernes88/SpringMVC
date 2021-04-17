@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+	id="WebApp_ID" version="3.1">
+
+	<display-name>mvc ejemplo</display-name>
+
+	<absolute-ordering />
+
+	
+	<!-- Configuracion del dispatcher servlet. dispatcher es el nombre que se le suele dar al despachador -->
+	<servlet>
+		<servlet-name>dispatcher</servlet-name>													<!-- nombre del servlet -->
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>		<!-- clase que debe utilizar el dispatcher servlet -->	
+		<init-param>
+			<param-name>contextConfigLocation</param-name>										<!-- nombre del servidor de servlets -->
+			<param-value>/WEB-INF/springMvcServlet.xml</param-value>							<!-- esta etiqueta permite enlazar este archivo web.xml con el otro archivo de configuracion llamado spring_mvc_servlet.xml que es el servidor de servlets-->
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+
+	<!-- Ubicacion URL del servlet -->
+	<servlet-mapping>
+		<servlet-name>dispatcher</servlet-name>													<!-- Definimos el servlet al que vamos a hacer referencia -->
+		<url-pattern>/</url-pattern>    														<!-- esta barra inclinada / indica que este archivo de configuracion esta localizado en la raiz de la carpeta WEB-INF -->
+	</servlet-mapping>
+	
+	
+	
+</web-app>

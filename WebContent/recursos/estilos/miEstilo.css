@@ -1,0 +1,7 @@
+@CHARSET "ISO-8859-1";
+/*Esto es una hoja de estilos*/
+
+/*Tarea1.Dar un color de fondo azul*/
+body{
+	background-color:blue;
+}
